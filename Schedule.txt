@@ -1,0 +1,541 @@
+# AI/ML Project Roadmap: Day-by-Day Schedule
+
+We’ll turn your AI Learning Companion idea into a structured, portfolio-ready project, starting with a student productivity prediction model and gradually building the skills you need to create your own AI/ML projects independently.
+
+The schedule below assumes you can work for 1–3 hours per day. It is designed for a beginner who has already studied ML concepts through tutorials but is now learning how to apply them in a complete project.
+
+## 1. What you will build
+
+[Bachelorarbeit Coaching | Akademische Begleitung](https://images.openai.com/static-rsc-4/tvmieTpN7Mjz337GMmUXGgc_SIEOq3Hb6IqEGELyBszVj9k3lfFlEy-AGYDCejcVSEt8cCoXqAisw_DrdxlXEGZ5LE51TVbw4WkfFNKmMyDzKPPSXG_Ah39lGF82L5kZg_--lLdIeTC7wH2ETiEhv8McU4sDV2J2UTJ2Yqw7KJE?purpose=inline)
+
+Version 1 — Student Productivity Prediction
+
+Use a public Kaggle dataset to predict a student's productivity score from relevant study and behavior features. Explore the data, train models, compare results, and explain the limitations.
+
+[Mastery Study - AI Flashcard Generator | Turn Notes into Cards Instantly](https://images.openai.com/static-rsc-4/hcghhzkyRkQcUmoEj1Aq1y9gwUnCBZBjpXJBbBJ7DQlZcn-rgsEA8N0Fvr8gmHLv7wOrvhUUAnLBPl9dhr3bBFTK81_c9xZCZQKCtJPGvENwaeVu7bfnQAgxK8qcg9Wd2xuMyGDwE-lUTV7B698jpF83mzKdJFRT9WVMVHUu5nE?purpose=inline)
+
+Version 2 — Personal AI Learning Companion
+
+Gradually introduce your own AI/ML learning records: focused study time, topics studied, completed tasks, difficulties, and revision needs. Use these records to develop personalized insights after you have enough suitable data.
+
+Important: These are two stages of one broader project idea, but they are different prediction problems. The public dataset will not automatically teach a model to predict your personal learning consistency. You will need to collect relevant personal data and define a separate target for that later.
+
+## 2. Your project timeline
+
+## 40 working days
+
+8 weeks · 5 main working days per week
+
+# 1–3 h
+
+Daily working time
+
+# 40–80 h
+
+Approximate total effort
+
+The plan includes data exploration, preprocessing, model training, evaluation, tuning, documentation, and a final project review. Some steps may take longer depending on the dataset and errors you encounter.
+
+Use two additional days each week as optional catch-up or rest days. If a task is unfinished, move it forward rather than skipping it.
+
+## 3. Set up your workspace before following the schedule
+
+Use Google Colab + Google Drive throughout. You do not need to install Python locally.
+
+Your project folder should eventually look like this:
+
+AI-Learning-Companion/
+
+`README.md`
+
+`project_log.md`
+
+`data/`
+
+`raw/` — original downloaded data
+
+`processed/` — cleaned or transformed data, if you need to save it
+
+`notebooks/`
+
+`01_problem_and_data.ipynb`
+
+`02_eda.ipynb`
+
+`03_preprocessing.ipynb`
+
+`04_baseline_model.ipynb`
+
+`05_model_comparison.ipynb`
+
+`06_tuning_and_error_analysis.ipynb`
+
+`07_final_model_and_predictions.ipynb`
+
+`reports/` — findings, charts, metrics, and final notes
+
+Create folders as you need them; you don't need to create every notebook on Day 1. Save each notebook in the `notebooks/` folder and keep the original dataset unchanged in `data/raw/`.
+
+### Your dataset
+
+Start with the [Kaggle Student Productivity Prediction Challenge](https://www.kaggle.com/competitions/student-performance-prediction-machine-learning-challenge/data?utm_source=chatgpt.com).
+
+Your intended first problem is:
+
+> Can we predict a student's productivity score from available study and behavioral features, and how well does the model perform on data it has not seen?
+
+The target is expected to be `productivity_score`, but verify the actual column names and target definition after downloading the files. Do not assume that every proposed feature exists or that a high score means the same thing across datasets.
+
+## 4. Rules for every working day
+
+Follow this routine regardless of which day you are on.
+
+First 10–20 minutes: Understand
+
+Read the day's task. Write down what you think you need to do and why.
+
+Next 40–120 minutes: Implement
+
+Write and run the code yourself in small steps. Inspect outputs after each major step instead of running a large block blindly.
+
+Last 10–20 minutes: Explain and record
+
+Write what you learned, what went wrong, and what the output means. Update `project_log.md`.
+
+These are flexible blocks, not strict limits. A one-hour session is enough to make meaningful progress; use up to three hours when a task genuinely needs it. If you get stuck, spend some time understanding the error rather than copying a fix you cannot explain.
+
+# 5. Complete 40-day schedule
+
+## Week 1 — Project setup and data understanding
+
+Goal: Set up the project and understand exactly what you are trying to predict.
+
+Deliverable by the end of the week: working project workspace, dataset files, and a clear problem statement.
+
+### Day 1: Set up the project workspace
+
+1–2 hours
+
+1. Create AI-Learning-Companion in Google Drive.
+2. Create data/raw, data/processed, notebooks, and reports folders.
+3. Create project_log.md and notebooks/01_problem_and_data.ipynb.
+4. Write a first draft of the problem statement, objective, and expected outcome.
+5. Record your starting knowledge and today's questions.
+
+End-of-day output: Folder structure, first notebook, project log.
+
+### Day 2: Download and organize the dataset
+
+1–2 hours
+
+1. Open the Kaggle competition page and review its rules and data description.
+2. Download the available training, test, and sample-submission files, if provided.
+3. Place the original files in data/raw without editing them.
+4. Record each filename, file size, source link, and any license or usage restrictions.
+5. If access or download fails, resolve that before moving on.
+
+End-of-day output: Original dataset stored and documented.
+
+### Day 3: Load the data in Colab
+
+1–2 hours
+
+1. Mount Google Drive in Colab.
+2. Read the training CSV using pandas; locate the file from your Drive folder.
+3. Inspect the first five and last five rows.
+4. Check shape, column names, data types, and the target column.
+5. Read any provided data dictionary or competition instructions.
+
+End-of-day output: Notebook can load the dataset and describe its schema.
+
+### Day 4: Understand the columns
+
+1–2 hours
+
+1. Classify each column as numeric, categorical, date/identifier, target, or uncertain.
+2. Check unique values in categorical columns and sensible ranges for numeric columns.
+3. Investigate the meaning and units of the target and each promising feature.
+4. Identify identifiers and possible features that reveal the target indirectly.
+5. Write down questions rather than guessing at unclear columns.
+
+End-of-day output: Column-description table and initial feature list.
+
+### Day 5: Check data quality and define the problem
+
+1–2 hours
+
+1. Count missing values and duplicate rows.
+2. Check impossible values, unusual ranges, and unexpected data types.
+3. Confirm whether the target is available in training data and absent from test data.
+4. Write the problem statement, target, candidate inputs, evaluation plan, and limitations.
+5. Commit a short Week 1 summary in reports or the notebook.
+
+End-of-day output: Data-quality summary and a finalized V1 problem definition.
+
+### Day 6: Catch up and explain your data
+
+1 hour
+
+1. Review anything unfinished from Days 1–5.
+2. Without looking at your notes, explain what each important column represents.
+3. Re-run the notebook from top to bottom and fix any broken cells.
+4. List three assumptions you still need to verify.
+
+End-of-day output: A reproducible first notebook.
+
+### Day 7: Rest or light review
+
+Optional, 1 hour
+
+1. Take a break or review the Week 1 summary.
+2. Write three questions you can now answer and three you still cannot.
+3. Do not begin advanced modeling just to get ahead.
+
+End-of-day output: A short reflection, if you choose to work.
+
+## Week 2 — Exploratory Data Analysis (EDA)
+
+Goal: Understand the patterns, distributions, relationships, and limitations in the data before training models.
+
+Notebook: `02_eda.ipynb` · Deliverable: charts and written observations.
+
+### Day 8: Create the EDA notebook
+
+1–3 hours
+
+1. Create 02_eda.ipynb and load the training data.
+2. Review the data types and missing-value counts again.
+3. Separate the target from input features conceptually; don't delete columns without a reason.
+4. Create a short markdown section stating what each analysis should answer.
+
+Output: Organized EDA notebook.
+
+### Day 9: Explore the target variable
+
+1–3 hours
+
+1. Calculate the target's count, mean, median, standard deviation, minimum, and maximum.
+2. Plot a histogram and, where useful, a box plot of the target.
+3. Look for skew, outliers, and unusual concentration of scores.
+4. Write what these patterns imply for a regression problem.
+
+Output: Target-distribution charts and observations.
+
+### Day 10: Explore individual features
+
+1–3 hours
+
+1. Separate numeric and categorical features.
+2. Use descriptive statistics for numeric columns.
+3. Inspect category counts for categorical features.
+4. Plot suitable histograms or bar charts for a useful selection of features.
+5. Investigate suspicious values rather than automatically removing them.
+
+Output: Feature-distribution charts.
+
+### Day 11: Study relationships between features and target
+
+1–3 hours
+
+1. Compare numeric features with the target using scatter plots or grouped summaries.
+2. Use correlation for appropriate numeric variables, remembering that correlation does not prove causation.
+3. For categorical variables, compare target distributions across groups.
+4. Identify promising features and possible redundant features.
+
+Output: Relationship charts and a preliminary feature shortlist.
+
+### Day 12: Check outliers, leakage, and data quality
+
+1–3 hours
+
+1. Revisit unusual observations found in the charts.
+2. Check whether any feature is recorded after the outcome or directly calculates the target.
+3. Investigate duplicate records and potential repeated individuals or groups, if relevant.
+4. Decide which issues require action and document why.
+
+Output: A documented plan for data-quality handling and leakage prevention.
+
+### Day 13: Summarize EDA findings
+
+1–3 hours
+
+1. Write five to ten evidence-based observations from your analysis.
+2. Choose a small set of charts that clearly communicate the important patterns.
+3. Record limitations, possible biases, and questions that the dataset cannot answer.
+4. Do not claim a feature causes productivity to increase just because it correlates with the target.
+
+Output: EDA summary in reports/ or the notebook.
+
+### Day 14: Review and catch up
+
+1–3 hours
+
+1. Restart and run 02_eda.ipynb from top to bottom.
+2. Fix inconsistent chart labels, unclear headings, or code that depends on hidden state.
+3. Explain each chart in plain language without reading the code.
+4. List the preprocessing decisions you will test next week.
+
+Output: Clean, understandable EDA notebook.
+
+## Week 3 — Preprocessing and a reliable validation strategy
+
+Goal: Prepare features correctly and create a fair way to compare models.
+
+Notebook: `03_preprocessing.ipynb` · Deliverable: a reproducible preprocessing workflow.
+
+### Day 15: Separate target and input features
+
+1–3 hours
+
+1. Define X as the selected input features and y as the target.
+2. Exclude the target, identifiers that should not predict the outcome, and any confirmed leakage columns from X.
+3. Inspect X and y shapes and confirm they align.
+4. Record why each excluded column was excluded.
+
+Output: Clear X/y separation and documented feature decisions.
+
+### Day 16: Create train and validation sets
+
+1–3 hours
+
+1. Split the labeled training data into training and validation sets, for example 80/20.
+2. Set random_state so the split can be reproduced.
+3. Use a suitable split strategy if the data contains time ordering, repeated people, or related groups.
+4. Keep the validation set out of all fitting and tuning decisions except evaluation.
+
+Output: A reproducible split with no accidental target leakage.
+
+### Day 17: Build numeric and categorical preprocessing
+
+1–3 hours
+
+1. Identify numeric and categorical input columns from their actual data types and meaning.
+2. Plan missing-value handling using SimpleImputer.
+3. Plan scaling for numeric features when useful and one-hot encoding for nominal categories.
+4. Use ColumnTransformer to apply the right steps to the right columns.
+5. Don't manually fit transformations on the entire dataset before splitting.
+
+Output: Preprocessing plan based on actual column types.
+
+### Day 18: Build a preprocessing pipeline
+
+1–3 hours
+
+1. Create a scikit-learn Pipeline containing preprocessing and a simple model placeholder or baseline model.
+2. Fit preprocessing only through the training pipeline.
+3. Transform the validation set using the already-fitted pipeline.
+4. Check that transformed data has the expected dimensions and contains no unexpected missing values.
+
+Output: Reusable pipeline without preprocessing leakage.
+
+### Day 19: Test and document the pipeline
+
+1–3 hours
+
+1. Test the pipeline on a small run of training and validation data.
+2. Handle any errors involving column types, missing values, or unknown categories.
+3. Confirm that validation rows were not used to fit preprocessing.
+4. Save the working code in 03_preprocessing.ipynb and document important choices.
+
+Output: Working preprocessing pipeline and clear notes.
+
+### Day 20: Review your evaluation strategy
+
+1–3 hours
+
+1. Review why a validation set is needed when test labels are unavailable.
+2. Learn the definitions and interpretation of MAE, RMSE, and R².
+3. Decide which metric is primary and why; MAE is often easier to interpret in target-score units.
+4. Check whether the split and metrics match the data and competition rules.
+
+Output: Evaluation plan ready before model comparison.
+
+### Day 21: Catch up and explain the pipeline
+
+1–3 hours
+
+1. Run 03_preprocessing.ipynb from top to bottom.
+2. Explain fit versus transform and why splitting comes before fitting transformations.
+3. Explain how your pipeline handles missing numeric and categorical values.
+4. Fix the notebook or postpone the next phase if the pipeline is not reliable.
+
+Output: Reproducible preprocessing and a written explanation.
+
+## Week 4 — Build your first regression model
+
+Goal: Establish a baseline so that you can tell whether your models are actually learning something useful.
+
+Notebook: `04_baseline_model.ipynb` · Deliverable: a working baseline and a Linear Regression result.
+
+| Day | Detailed tasks                                                                                                                                                                                                                            | Expected output                             |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| 22  | Create `04_baseline_model.ipynb`. Load your dataset and reproduce the same train/validation split and preprocessing pipeline. Create a simple `DummyRegressor` baseline that predicts a constant value, such as the training-target mean. | Baseline predictions and a reference score. |
+| 23  | Calculate MAE, RMSE, and R² for the baseline. Explain each metric in your own words. Check whether the baseline is better than a naive alternative such as predicting zero, where appropriate.                                            | Baseline metrics table.                     |
+| 24  | Train a `LinearRegression` model inside your pipeline. Generate validation predictions and calculate the same metrics. Compare its performance with the baseline.                                                                         | First actual ML model and its scores.       |
+| 25  | Plot actual versus predicted values and inspect residuals (actual minus predicted). Look for systematic underprediction, overprediction, and large errors.                                                                                | Prediction and residual plots.              |
+| 26  | Interpret the results. Did Linear Regression improve on the baseline? What kinds of errors are common? Investigate unexpected results rather than trying random model changes.                                                            | Short model evaluation report.              |
+| 27  | Re-run the notebook from a clean state. Fix broken cells, clarify variable names, and write markdown explanations before major code sections.                                                                                             | Reproducible baseline notebook.             |
+| 28  | Review the concepts: baseline, regression, MAE, RMSE, R², predictions, and residuals. Write a short explanation of why a baseline is essential.                                                                                           | Week 4 learning summary.                    |
+
+### What you must understand before moving on
+
+- A model can produce predictions without being useful.
+- A more complicated model is not automatically better.
+- Lower MAE and RMSE generally mean smaller prediction errors on the same target and evaluation set.
+- R² measures performance relative to a mean-prediction reference; it can be negative on validation data.
+- You must compare models on the same validation split using the same metrics.
+
+## Week 5 — Compare multiple models
+
+Goal: Test whether nonlinear models can capture patterns that Linear Regression misses.
+
+Notebook: `05_model_comparison.ipynb` · Deliverable: a consistent comparison of several models.
+
+| Day | Detailed tasks                                                                                                                                                                                  | Expected output                                              |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 29  | Create `05_model_comparison.ipynb`. Reuse your established preprocessing and validation split. Train a `DecisionTreeRegressor`. Begin with reasonable settings and calculate MAE, RMSE, and R². | Decision Tree evaluation.                                    |
+| 30  | Investigate overfitting. Compare training performance with validation performance. Try a few tree-depth settings and explain how limiting depth changes the model.                              | Notes on complexity and generalization.                      |
+| 31  | Train a `RandomForestRegressor`. Use the same split and metrics as before. Compare it with the baseline, Linear Regression, and Decision Tree.                                                  | Random Forest evaluation.                                    |
+| 32  | If time permits, try a Gradient Boosting model available in scikit-learn. Otherwise, use the time to understand and improve your existing experiments.                                          | Another comparison, or stronger analysis of existing models. |
+| 33  | Create one results table containing each model's validation MAE, RMSE, and R². Identify the strongest result and check that every model used the same data split.                               | Model comparison table.                                      |
+| 34  | Analyze the trade-offs. Compare errors, training versus validation performance, complexity, and reproducibility. Do not select a model from one metric without considering the project goal.    | Preliminary model-selection decision.                        |
+| 35  | Clean and re-run the comparison notebook. Record what you learned about linear and nonlinear models and why your preferred model is currently the best candidate.                               | Reproducible model comparison.                               |
+
+Important: Gradient Boosting is optional. If you are still debugging the Decision Tree or Random Forest, spend the time understanding those models instead of adding another algorithm just to increase the model count.
+
+## Week 6 — Cross-validation, tuning, and error analysis
+
+Goal: Improve your model systematically and check whether your results are stable.
+
+Notebook: `06_tuning_and_error_analysis.ipynb` · Deliverable: a justified final-model candidate.
+
+| Day | Detailed tasks                                                                                                                                                                                      | Expected output                            |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| 36  | Learn the purpose of cross-validation. Apply `cross_val_score` or an appropriate scikit-learn cross-validation method to your selected candidate. Keep preprocessing inside the pipeline.           | Cross-validation results.                  |
+| 37  | Compare cross-validation scores across a few models or configurations. Look at the mean and variation of scores, not just the best individual fold.                                                 | More reliable estimate of model stability. |
+| 38  | Learn how `RandomizedSearchCV` works. Define a small, sensible parameter search for your strongest candidate. Use a scoring metric aligned with your goal, such as negative MAE.                    | A documented tuning plan.                  |
+| 39  | Run the search. Review the best parameters and cross-validation score. Check that the search uses the training portion only and does not tune against the validation results repeatedly.            | Best parameters and search results.        |
+| 40  | Evaluate the tuned candidate on your held-out validation set once the model-selection process is complete. Compare it with your earlier models and record whether tuning actually helped.           | Final validation comparison.               |
+| 41  | Examine large prediction errors. Look at the observations with the largest absolute residuals and investigate whether they share patterns, unusual values, or limitations the model cannot address. | Error-analysis notes and examples.         |
+| 42  | Review the entire experiment. Choose your final candidate based on validation performance, stability, simplicity, and the project's purpose. Document why you selected it.                          | Final candidate and selection rationale.   |
+
+### A critical rule about validation
+
+Use your training data for model fitting and cross-validation. Keep the held-out validation set for assessing the model-selection decisions you make. If you repeatedly change the model based on validation results, those results become less independent.
+
+The competition's separate test data generally does not include labels, so you cannot calculate its true MAE, RMSE, or R² unless those labels are provided separately.
+
+## Week 7 — Final model and predictions
+
+Goal: Build the final modeling workflow, generate predictions for the competition test data, and prepare a valid output file if the competition requires one.
+
+Notebook: `07_final_model_and_predictions.ipynb` · Deliverable: final model workflow and prediction file, where applicable.
+
+| Day | Detailed tasks                                                                                                                                                                                            | Expected output                |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| 43  | Review the competition's rules, required submission format, sample submission, and target column. Check whether the competition is still accepting submissions.                                           | Confirmed output requirements. |
+| 44  | Review your selected model and preprocessing pipeline. Decide how to use all labeled training data for the final fit after completing model selection.                                                    | Final training plan.           |
+| 45  | Refit the chosen pipeline on all labeled training data using the selected settings. Do not fit a new preprocessing pipeline separately on the test set.                                                   | Final fitted pipeline.         |
+| 46  | Load the competition test data and verify its columns match the expected inputs. Generate predictions with the fitted pipeline. Check the number of predictions, missing values, and implausible outputs. | Predictions for the test rows. |
+| 47  | If a sample submission is provided, match its format exactly: column names, row order, identifier handling, and required target column. Save the output in the appropriate project location.              | Submission CSV, if required.   |
+| 48  | Test the final workflow from a clean runtime. Make sure it does not depend on variables left over from earlier notebooks or files stored only in temporary Colab storage.                                 | Reproducible final workflow.   |
+| 49  | Write a short final modeling report covering the selected model, validation metrics, baseline comparison, limitations, and what you would improve next.                                                   | Model report in `reports/`.    |
+
+Do not invent a test score. If the competition provides no test labels, your report should state the held-out validation results and distinguish them from predictions generated for the unlabeled test data.
+
+## Week 8 — Portfolio presentation and project completion
+
+Goal: Turn your experiments into a project another person can understand, run, and evaluate.
+
+Deliverable: clean notebooks, documentation, project reflection, and a GitHub-ready project folder.
+
+| Day | Detailed tasks                                                                                                                                                                                 | Expected output                      |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| 50  | Draft `README.md`: project overview, problem statement, dataset source, target, and objectives. Explain what the model predicts and who the project is intended to help.                       | README draft.                        |
+| 51  | Document setup and execution steps, libraries, notebook order, dataset placement, and how to reproduce the experiments. Do not include passwords, API tokens, or private data.                 | Reproducibility instructions.        |
+| 52  | Review every notebook. Add headings, explain key decisions, remove redundant experiments, and ensure that charts have labels and conclusions.                                                  | Readable notebooks.                  |
+| 53  | Restart and run each notebook from top to bottom in the intended order. Fix errors, missing dependencies, broken paths, and references to variables that were never created in that notebook.  | Clean end-to-end run.                |
+| 54  | Add a results table and selected charts to your report or README. Explain the baseline, model comparison, validation results, and why you selected your final candidate.                       | Evidence-based project presentation. |
+| 55  | Write a project retrospective: what you learned, the biggest errors you solved, which assumptions changed, what the model cannot predict, and what you would do differently next time.         | Project reflection.                  |
+| 56  | Perform the final checklist below. If ready, publish the project to GitHub and verify that the README and notebook files display correctly. Plan Version 2 without rushing into another model. | Portfolio-ready Version 1.           |
+
+## 6. How to manage your project log
+
+Update `project_log.md` at the end of every session. You can use this template for each day.
+
+## Day [number] — [date]
+
+**Planned task:**\
+[What I intended to complete]
+
+**Work completed:**\
+[What I actually did]
+
+**Concepts applied:**\
+[For example: train/validation split, missing-value handling, regression metrics]
+
+**Challenges or errors:**\
+[What went wrong and what I investigated]
+
+**What I understand now:**\
+[Explain in my own words]
+
+**What I still need to understand:**\
+[Questions that remain]
+
+**Next task:**\
+[The next scheduled task or unfinished work]
+
+**Time spent:**\
+[Hours and minutes]
+
+This log is important for your consistency goal. Even on a difficult day, recording one small completed task gives you a clear starting point for the next session.
+
+## 7. Final completion checklist
+
+Use this at the end of Day 56. Your project is complete when the applicable items are checked.
+
+### Version 1 completion
+
+0 of 12
+
+Problem statement and prediction target are clearly defined.
+
+Dataset source and usage conditions are documented.
+
+Data quality and EDA findings are explained.
+
+Preprocessing is reproducible and avoids data leakage.
+
+A simple baseline is compared with trained models.
+
+Regression metrics are reported on held-out validation data.
+
+Model comparison and tuning decisions are justified.
+
+Final predictions or the required competition submission file are checked, if applicable.
+
+Notebooks run from a clean runtime in the documented order.
+
+README explains the project, setup, results, and limitations.
+
+Project log and reflection are complete.
+
+No credentials or private information are included in published files.
+
+## 8. What comes after Version 1?
+
+Once the public-dataset model is complete, move to the personal-learning component of the AI Learning Companion. Do not mix your own learning records into the first model unless you have a clear reason and a compatible target.
+
+A sensible Version 2 progression is:
+
+1. Build a learning tracker: record the date, topic, planned task, focused minutes, completion status, difficulty, and next step.
+2. Collect your own data consistently: keep tracking for several weeks before attempting personalized prediction.
+3. Analyze your habits: examine study frequency, session length, missed sessions, and task completion. Start with descriptive statistics and visualizations.
+4. Define one prediction target: for example, estimate how long a particular type of task might take, once you have enough relevant historical examples.
+5. Evaluate it honestly: compare against a simple baseline. If your personal dataset is too small, keep the feature as tracking or a rule-based insight rather than claiming an ML model is accurate.
+6. Build a simple interface: only after the tracking and modeling logic work reliably, consider a lightweight dashboard for daily use.
+
+The key is to finish one sound project rather than rush into many algorithms or features.
+
+Your first action: Begin with Day 1. Create the project folder and `project_log.md`, then open `01_problem_and_data.ipynb` in Google Colab. Do not start model training yet. The first milestone is to understand the data and define the problem clearly.
